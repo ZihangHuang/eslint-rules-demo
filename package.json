@@ -1,0 +1,26 @@
+{
+  "name": "eslint-plugin-my-practice",
+  "version": "0.0.1",
+  "description": "eslint plugin practice demo",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "qwerty",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "mocha": "^7.2.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
