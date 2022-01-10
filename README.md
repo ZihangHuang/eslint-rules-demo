@@ -107,6 +107,10 @@ module.exports = {
 
 Vue 与 ESLint：
 
+```
+npm i -D eslint eslint-plugin-vue
+```
+
 安装`eslint-plugin-vue`，然后配置：
 
 ```js
@@ -116,16 +120,23 @@ module.exports = {
     node: true,
     es6: true,
   },
+  parser: 'vue-eslint-parser',
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 2019,
-    parser: 'babel-eslint',
   },
   extends: ['plugin:vue/essential', 'eslint:recommended'], // 继承的子规范
   plugins: [],
-  rules: {},
-  globals: {},
-};
+  rules: {
+    "vue/no-multiple-template-root": "off",
+  },
+  globals: {
+    defineProps: "readonly",
+    defineEmits: "readonly",
+    defineExpose: "readonly",
+    withDefaults: "readonly",
+  },
+}
+
 ```
 
 注意：`parser: 'babel-eslint'` 必须写在 `parserOptions` 里，因为 `eslint-plugin-vue` 使用 `vue-eslint-parser` 去解析 vue 文件，如果 `parser: 'babel-eslint'` 写在外面，会覆盖 `parser` 选项让其失效。
